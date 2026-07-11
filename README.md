@@ -12,20 +12,20 @@
 
 ## ✨ Features
 
-- 🎨 **Midnight Teal + Gold Theme** — Unique color palette, not your average purple/dark blue
-- 🌙 **Light / Dark Mode** — Full toggle with smooth transitions, text readable in both modes
-- 🔍 **Smart Job Search** — Search by title, company, skills with real-time filtering
-- 🏷️ **Category & Type Filters** — Filter by Engineering, Design, Marketing, Product, Data, Security
-- 💫 **Scroll Reveal Animations** — Every section animates in smoothly on scroll
-- 🔄 **Page Transitions** — Smooth fade + slide between all routes via AnimatePresence
-- 🏢 **Real Company SVG Logos** — Google, Apple, Meta, Netflix, Spotify, Airbnb, AWS, Figma, HubSpot, Notion, Snap, CrowdStrike
-- ⚡ **AI Match % Badge** — Each job card shows your match percentage
-- 🔖 **Save Jobs** — Heart/save toggle on every job card with localStorage support
-- 📊 **CountUp Animations** — Stats section counts up on scroll into view
-- 🎯 **Featured Jobs** — Gold gradient stripe + featured badge on top listings
-- 📱 **Fully Responsive** — Mobile drawer menu, hamburger animation, works on all screen sizes
-- 🔐 **Sign In Modal** — Animated form with email/password validation
-- 📬 **Newsletter Subscribe** — With success animation on submission
+-  **Midnight Teal + Gold Theme** — Unique color palette, not your average purple/dark blue
+-  **Light / Dark Mode** — Full toggle with smooth transitions, text readable in both modes
+-  **Smart Job Search** — Search by title, company, skills with real-time filtering
+-  **Category & Type Filters** — Filter by Engineering, Design, Marketing, Product, Data, Security
+-  **Scroll Reveal Animations** — Every section animates in smoothly on scroll
+-  **Page Transitions** — Smooth fade + slide between all routes via AnimatePresence
+-  **Real Company SVG Logos** — Google, Apple, Meta, Netflix, Spotify, Airbnb, AWS, Figma, HubSpot, Notion, Snap, CrowdStrike
+-  **AI Match % Badge** — Each job card shows your match percentage
+-  **Save Jobs** — Heart/save toggle on every job card with localStorage support
+-  **CountUp Animations** — Stats section counts up on scroll into view
+-  **Featured Jobs** — Gold gradient stripe + featured badge on top listings
+-  **Fully Responsive** — Mobile drawer menu, hamburger animation, works on all screen sizes
+-  **Sign In Modal** — Animated form with email/password validation
+-  **Newsletter Subscribe** — With success animation on submission
 
 ---
 

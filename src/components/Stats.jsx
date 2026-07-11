@@ -1,58 +1,52 @@
-import { useEffect, useRef, useState } from "react"
-import { motion } from "framer-motion"
-import ScrollReveal from "./ScrollReveal"
-import { useTheme } from "../context/ThemeContext"
+import{useEffect,useRef,useState}from"react"
+import{motion}from"framer-motion"
+import ScrollReveal from"./ScrollReveal"
+import{useTheme}from"../context/ThemeContext"
 
-function CountUp({ end, suffix="" }) {
-  const [n, setN]   = useState(0)
-  const ref   = useRef(null)
-  const done  = useRef(false)
-  useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => {
-      if(e.isIntersecting && !done.current) {
-        done.current = true
-        let cur = 0; const step = end/55
-        const t = setInterval(()=>{ cur+=step; if(cur>=end){setN(end);clearInterval(t)}else setN(Math.floor(cur)) }, 18)
+function CountUp({end,suffix=""}){
+  const[n,setN]=useState(0)
+  const ref=useRef(null),done=useRef(false)
+  useEffect(()=>{
+    const obs=new IntersectionObserver(([e])=>{
+      if(e.isIntersecting&&!done.current){
+        done.current=true;let c=0;const s=end/55
+        const t=setInterval(()=>{c+=s;if(c>=end){setN(end);clearInterval(t)}else setN(Math.floor(c))},18)
       }
-    },{ threshold:0.5 })
-    if(ref.current) obs.observe(ref.current)
-    return () => obs.disconnect()
+    },{threshold:0.5})
+    if(ref.current)obs.observe(ref.current)
+    return()=>obs.disconnect()
   },[end])
-  return <span ref={ref}>{n.toLocaleString()}{suffix}</span>
+  return<span ref={ref}>{n.toLocaleString()}{suffix}</span>
 }
 
-const DATA = [
-  { icon:"💼", n:50000, s:"+", label:"Jobs Posted",    sub:"Updated every day"    },
-  { icon:"🏢", n:12000, s:"+", label:"Companies",      sub:"Startups to F500"     },
-  { icon:"👤", n:2000,  s:"M+",label:"Candidates",     sub:"Across 50+ countries" },
-  { icon:"✅", n:95,    s:"%", label:"Placement Rate", sub:"Land jobs in 30 days" },
+const DATA=[
+  {icon:"💼",n:50000,s:"+",label:"Jobs Posted",   sub:"Updated daily"},
+  {icon:"🏢",n:12000,s:"+",label:"Companies",     sub:"Global employers"},
+  {icon:"👤",n:2000, s:"M+",label:"Candidates",   sub:"50+ countries"},
+  {icon:"✅",n:95,   s:"%", label:"Success Rate", sub:"Placed in 30 days"},
 ]
 
-export default function Stats() {
-  const { dark } = useTheme()
-  return (
+export default function Stats(){
+  const{dark:T}=useTheme()
+  return(
     <section className="py-20 px-5"
-      style={{ background: dark?"#0f0e17":"#faf9f6",
-        borderTop:`1px solid ${dark?"rgba(255,255,255,0.05)":"rgba(124,58,237,0.08)"}` }}>
+      style={{background:T?"#060d12":"#f0f9f7",
+        borderTop:`1px solid ${T?"rgba(13,148,136,0.1)":"rgba(13,148,136,0.1)"}`}}>
       <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
         {DATA.map((d,i)=>(
           <ScrollReveal key={d.label} delay={i*0.08}>
-            <motion.div whileHover={{ y:-3 }}
-              className="p-6 rounded-2xl text-center"
-              style={{
-                background: dark?"rgba(255,255,255,0.04)":"#ffffff",
-                border:`1px solid ${dark?"rgba(255,255,255,0.07)":"rgba(124,58,237,0.1)"}`,
-                boxShadow: dark?"none":"0 2px 16px rgba(124,58,237,0.06)",
-              }}>
-              <div className="text-2xl mb-3">{d.icon}</div>
-              <p className="font-bold text-2xl mb-0.5 gradient-text">
-                <CountUp end={d.n} suffix={d.s} />
+            <motion.div whileHover={{y:-4}}
+              className="p-6 rounded-2xl text-center relative overflow-hidden group card">
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{background:"radial-gradient(circle at 50% 0%,rgba(13,148,136,0.08),transparent 70%)"}}/>
+              <div className="text-2xl mb-3 relative z-10">{d.icon}</div>
+              <p className="font-bold text-2xl mb-0.5 gt relative z-10">
+                <CountUp end={d.n} suffix={d.s}/>
               </p>
-              <p className="font-semibold text-sm mb-0.5"
-                style={{ color: dark?"#c4b5fd":"#6d28d9" }}>{d.label}</p>
-              <p className="text-xs" style={{ color:dark?"rgba(255,255,254,0.32)":"rgba(15,14,23,0.42)" }}>
-                {d.sub}
-              </p>
+              <p className="font-semibold text-sm mb-0.5 relative z-10"
+                style={{color:"#0d9488"}}>{d.label}</p>
+              <p className="text-xs relative z-10"
+                style={{color:T?"rgba(232,244,240,0.38)":"rgba(10,31,28,0.48)"}}>{d.sub}</p>
             </motion.div>
           </ScrollReveal>
         ))}

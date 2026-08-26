@@ -8,10 +8,10 @@ export default {
         grotesk:["Space Grotesk", "sans-serif"],
       },
       colors: {
-        indigo: {
-          400: "#818cf8",
-          500: "#6366f1",
-          600: "#4f46e5",
+        teal: {
+          400: "#2dd4bf",
+          500: "#14b8a6",
+          600: "#0d9488",
         }
       }
     },

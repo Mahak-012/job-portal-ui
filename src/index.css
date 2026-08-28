@@ -19,8 +19,15 @@ body.light {
   color:#1a1033;
 }
 
+/* ✅ Scrollbar - Teal (Purple se change) */
 ::-webkit-scrollbar{width:3px;}
-::-webkit-scrollbar-thumb{background:#7c3aed;border-radius:4px;}
+::-webkit-scrollbar-thumb{background:#0d9488;border-radius:4px;}  /* 👈 Purple se Teal */
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #0d9488 transparent;
+}
 
 /* ── ANIMATIONS ── */
 @keyframes fadeUp    {from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
@@ -42,26 +49,27 @@ body.light {
 .anim-float     {animation:floatY 5s ease-in-out infinite}
 .spin-ring      {animation:spinRing 22s linear infinite}
 
-/* ── GRADIENT TEXT ── */
+/* ✅ Gradient Text - Teal (Purple se change) */
 .g-text{
-  background:linear-gradient(135deg,#7c3aed 0%,#a855f7 50%,#6366f1 100%);
+  background:linear-gradient(135deg,#0d9488 0%,#14b8a6 50%,#2dd4bf 100%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
 
 /* ── GLASS CARDS ── */
 body.dark  .glass{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);}
-body.light .glass{background:#ffffff;border:1px solid rgba(124,58,237,0.15);box-shadow:0 4px 24px rgba(124,58,237,0.08);}
+body.light .glass{background:#ffffff;border:1px solid rgba(13,148,136,0.15);box-shadow:0 4px 24px rgba(13,148,136,0.08);}
 
-/* ── BUTTON ── */
+/* ✅ Button - Teal (Purple se change) */
 .btn-v{
-  background:linear-gradient(135deg,#7c3aed,#a855f7);
+  background:linear-gradient(135deg,#0d9488,#14b8a6);
   color:#fff;font-weight:700;border-radius:12px;cursor:pointer;
   transition:all 0.3s ease;position:relative;overflow:hidden;border:none;
 }
-.btn-v:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(124,58,237,0.4);}
+.btn-v:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(13,148,136,0.4);}
 
-/* ── INPUT ── */
-body.dark  .v-input{background:rgba(255,255,255,0.06);border:1.5px solid rgba(124,58,237,0.25);color:#f0eeff;}
-body.light .v-input{background:#fff;border:1.5px solid rgba(124,58,237,0.2);color:#1a1033;}
-.v-input::placeholder{color:rgba(124,58,237,0.4);}
-.v-input:focus{outline:none;border-color:#7c3aed;}
+/* ✅ Input - Teal (Purple se change) */
+body.dark  .v-input{background:rgba(255,255,255,0.06);border:1.5px solid rgba(13,148,136,0.25);color:#f0eeff;}
+body.light .v-input{background:#fff;border:1.5px solid rgba(13,148,136,0.2);color:#1a1033;}
+.v-input::placeholder{color:rgba(13,148,136,0.4);}
+.v-input:focus{outline:none;border-color:#0d9488;}
+
